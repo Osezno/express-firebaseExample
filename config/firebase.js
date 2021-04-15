@@ -11,13 +11,13 @@ let admin_fire_config = {
 admin.initializeApp(admin_fire_config);
 
 const fireStore = admin.firestore();
-console.log(fireStore)
+
 
 module.exports = {
-    registerUserData:(uid, userId, program) => fireStore.doc(`carros/${uid}/userData/${userId}`).set({
-        ...program,
-        createdAt: getTimestamp(),
-    }, { merge: true }),
-    getCars: () => fireStore.collection('cars'),    
+    registerUserData:(uid,nombre) => fireStore.collection('carros').doc(uid).collection("userData").add({
+        nombre:nombre,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    }),
+    getCars: () => fireStore.collection('carros').get(),    
     createCar:(data) => fireStore.collection('carros').add(data)
 };

@@ -25,7 +25,6 @@ module.exports = {
         make: "Honda",
         model: "Civic",
         estimatedDate: "2020/20/12",
-        id: 3342,
         km: 90000,
         image: "http://3.23.108.188/cars/civic.jpg"
     },
@@ -35,7 +34,6 @@ module.exports = {
         model: "Tiguan",
         km: 13500,
         estimatedDate: "2020/20/12",
-        id: 3343,
         image: "http://3.23.108.188/cars/tiguan.jpg"
     },
     {
@@ -43,7 +41,6 @@ module.exports = {
         make: "Nissan",
         model: "Sentra",
         km: 6000,
-        id: 3344,
         estimatedDate: "2020/20/12",
         image: "http://3.23.108.188/cars/sentra.jpg"
     },
@@ -51,7 +48,6 @@ module.exports = {
         description: " change of pads ", "make": "Volkswagen",
         model: "Vento",
         km: 80050,
-        id: 3345,
         estimatedDate: "2020/20/12",
         image: "http://3.23.108.188/cars/vento.jpg"
     },
@@ -69,7 +65,6 @@ module.exports = {
         model: "Spark",
         km: 16098,
         estimatedDate: "2020/20/12",
-        id: 3347,
         image: "http://3.23.108.188/cars/spark.jpg"
       }
     ]

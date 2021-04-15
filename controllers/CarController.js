@@ -18,14 +18,14 @@ const valid = (prop, min = 2, max = 20) => {
 router.get('/getCars', async (req, res) => {
   const { getCars } = firebase;
   let clientRes = { ...resMessage }
-  getCars().get().then(cars => {
+  getCars().then(cars => {
     let carros = [];
+    cars.forEach(car => carros.push(
+      {
+        ...car.data(),
+        id: car.id
+      }))
 
-    cars.forEach(car => {
-      carros.push({ ...car.data(), id: car.id })
-    })
-
-    console.log(carros)
     clientRes["success"] = true;
     clientRes["data"] = carros;
     clientRes["message"] = success.getCars;
@@ -37,24 +37,23 @@ router.get('/getCars', async (req, res) => {
 })
 
 router.get('/createCars', (req, res) => {
+  //esta solo ruta ya no es necesaria 
+  //para usarse una vez
   const { carJson } = catalogs;
   const { createCar } = firebase;
   carJson.map(data => createCar(data))
   return res.send("carros creados");
 })
 
-router.get('/updateCars', async (req, res) => {
+router.post('/updateCars', async (req, res) => {
   const { registerUserData } = firebase;
-  const { nombre, correo, telefono } = req.body
+  const { nombre, id } = req.body
   let clientRes = { ...resMessage }
 
-  if( valid(nombre) &&
-      valid(correo) && 
-      valid(telefono)) {
-
-    const data = { nombre: nombre, correo: correo, telefono: telefono }
+  if (!checkNull(id) &&
+    valid(nombre)) {
     try {
-      registerUserData(data);
+      registerUserData(id,nombre);
     }
     catch (e) {
       console.log(e)
