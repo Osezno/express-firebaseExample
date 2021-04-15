@@ -1,0 +1,72 @@
+################################################
+#   ┌─┐┬┌┬┐╦╔═╗╔╗╔╔═╗╦═╗╔═╗
+#   │ ┬│ │ ║║ ╦║║║║ ║╠╦╝║╣
+#  o└─┘┴ ┴ ╩╚═╝╝╚╝╚═╝╩╚═╚═╝
+#
+# > Files to exclude from your app's repo.
+#
+# This file (`.gitignore`) is only relevant if
+# you are using git.
+#
+# It exists to signify to git that certain files
+# and/or directories should be ignored for the
+# purposes of version control.
+#
+# This keeps tmp files and sensitive credentials
+# from being uploaded to  your repository.  And
+# it allows you to configure your app for your
+# machine without accidentally committing settings
+# which will smash the local settings of other
+# developers on your team.
+#
+# Some reasonable defaults are included below,
+# but, of course, you should modify/extend/prune
+# to fit your needs!
+#
+################################################
+
+
+################################################
+# Local Configuration
+#
+# Explicitly ignore files which contain:
+#
+# 1. Sensitive information you'd rather not push to
+#    your git repository.
+#    e.g., your personal API keys or passwords.
+#
+# 2. Developer-specific configuration
+#    Basically, anything that would be annoying
+#    to have to change every time you do a
+#    `git pull` on your laptop.
+#    e.g. your local development database, or
+#    the S3 bucket you're using for file uploads
+#    during development.
+#
+################################################
+
+
+
+node_modules
+config/firebase_config.js
+config/ecb2021-42260-firebase-adminsdk-wtw47-33ea04416f.json
+.tmp
+
+
+
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
+.node_history
+dump.rdb
+
+npm-debug.log
+lib-cov
+*.seed
+*.log
+*.out
+*.pid
+
